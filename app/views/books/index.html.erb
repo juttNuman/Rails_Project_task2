@@ -1,0 +1,30 @@
+
+<form action="/search">
+<input name="q" type="text" placeholder="Search" aria-label="Search">
+<button type="submit">Search</button>
+
+
+
+
+
+
+
+
+<h1>All Books</h1>
+<table>
+
+  <tr>
+    <th>Book_Id</th>
+    <th>Book Title</th>
+    <th>Author_Id</th>
+  </tr>
+  <tr>
+    <% @books.each do |book| %>
+   <td> <%= book.id%></td>
+    <td><%= book.title %></td>
+    <td><a href="/arthurs/<%=book.arthur_id%>"><%= book.arthur_id %> </a></td>
+  </tr>
+  <% end %>
+</table>
+
+

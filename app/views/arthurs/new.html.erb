@@ -1,0 +1,9 @@
+<h2>Add The Arthur:</h2>
+<%= form_with model: @arthur do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+    <%= form.submit %>
+  </p>
+<% end %>

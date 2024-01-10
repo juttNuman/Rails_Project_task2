@@ -1,0 +1,16 @@
+<h1>All The Authors</h1>
+<ul>
+<% @arthurs.each do |arthur| %>
+<li>
+<a href = "/arthurs/<%= arthur.id%> "> 	<%= arthur.name%>
+</a>
+
+</li>
+<% end %>
+<a href="/arthurs/new"><strong>Add New Author</strong></a>
+
+</ul>
+
+
+
+

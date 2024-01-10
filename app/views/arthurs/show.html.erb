@@ -1,0 +1,41 @@
+<h2>Details</h2>
+
+<h1><%= @arthur.name %></h1>
+
+
+
+<h2>Books</h2>
+<% @arthur.books.each do |book| %>
+<p>
+    <strong>Book_Id:</strong>
+    <%= book.id%>
+  <p>
+    <strong>Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= book.description %>
+  </p>
+<% end %>
+
+
+
+<h2>Add The Book:</h2>
+<%= form_with model: [ @arthur, @arthur.books.build ] do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% @arthur.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
